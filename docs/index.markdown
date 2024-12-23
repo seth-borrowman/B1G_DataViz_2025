@@ -5,5 +5,11 @@
 layout: home
 ---
 # Big Ten Academic Alliance 2025 Data Viz Championship
-Github pages test
+## Introduction
+
+## Heatmap
 <iframe src="widgets/ggplotlyHeatmap.html" height="600px" width="100%" style="border:none;"></iframe>
+
+## Network graph
+
+## Wordcloud
