@@ -5,6 +5,7 @@ library(visNetwork)
 library(geomnet)
 library(igraph)
 library(wordcloud2)
+library(pandoc)
 
 summary_df <- readRDS("summary_df.rds")
 big10short <- readRDS("big10short.rds")
@@ -26,7 +27,8 @@ edge_heatmap <- edges %>%
   )
 ggplotly(edge_heatmap, tooltip = "text")
 saveWidget(ggplotly(edge_heatmap, tooltip = "text"),
-  file = paste0(getwd(), "/ggplotlyHeatmap.html")
+  file = here::here("widgets", "ggplotlyHeatmap.html"),
+  selfcontained = FALSE
 )
 
 # Use colors of universities
@@ -97,7 +99,10 @@ network_graph <- visNetwork(
     autoResize = TRUE
   )
 network_graph
-visSave(network_graph, file = "network.html")
+visSave(network_graph,
+  file = here::here("widgets", "network.html"),
+  selfcontained = FALSE
+)
 
 ## Get most common keywords
 words <- summary_df %>%
@@ -140,13 +145,19 @@ wordcloud <- wordcloud2(
   words,
   color = sample(colors$color, nrow(words), replace = TRUE)
 )
-saveWidget(wordcloud, "wordcloud.html", selfcontained = FALSE)
+saveWidget(wordcloud,
+  here::here("widgets", "wordcloud.html"),
+  selfcontained = FALSE
+)
 shaped_wordcloud <- letterCloud(
   words,
   color = sample(colors$color, nrow(words), replace = TRUE),
   word = "B1G"
 )
-saveWidget(shaped_wordcloud, "shaped_wordcloud.html", selfcontained = FALSE)
+saveWidget(shaped_wordcloud,
+  here::here("widgets", "shaped_wordcloud.html"),
+  selfcontained = FALSE
+)
 
 ## Make shared pub keyword cloud
 shared_words <- summary_df %>%
@@ -196,7 +207,10 @@ shared_wordcloud <- wordcloud2(
   shared_words,
   color = sample(colors$color, nrow(words), replace = TRUE),
 )
-saveWidget(shared_wordcloud, "shared_wordcloud.html", selfcontained = FALSE)
+saveWidget(shared_wordcloud,
+  here::here("widgets", "shared_wordcloud.html"),
+  selfcontained = FALSE
+)
 
 # Compare what words are more/less common in shared/indiv pubs
 compare_words <- merge(
