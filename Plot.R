@@ -28,7 +28,7 @@ edge_heatmap <- edges %>%
 ggplotly(edge_heatmap, tooltip = "text")
 saveWidget(ggplotly(edge_heatmap, tooltip = "text"),
   file = here::here("widgets", "ggplotlyHeatmap.html"),
-  selfcontained = FALSE
+  selfcontained = TRUE
 )
 
 # Use colors of universities
@@ -101,7 +101,7 @@ network_graph <- visNetwork(
 network_graph
 visSave(network_graph,
   file = here::here("widgets", "network.html"),
-  selfcontained = FALSE
+  selfcontained = TRUE
 )
 
 ## Get most common keywords
@@ -147,7 +147,7 @@ wordcloud <- wordcloud2(
 )
 saveWidget(wordcloud,
   here::here("widgets", "wordcloud.html"),
-  selfcontained = FALSE
+  selfcontained = TRUE
 )
 shaped_wordcloud <- letterCloud(
   words,
@@ -156,7 +156,7 @@ shaped_wordcloud <- letterCloud(
 )
 saveWidget(shaped_wordcloud,
   here::here("widgets", "shaped_wordcloud.html"),
-  selfcontained = FALSE
+  selfcontained = TRUE
 )
 
 ## Make shared pub keyword cloud
@@ -209,7 +209,7 @@ shared_wordcloud <- wordcloud2(
 )
 saveWidget(shared_wordcloud,
   here::here("widgets", "shared_wordcloud.html"),
-  selfcontained = FALSE
+  selfcontained = TRUE
 )
 
 # Compare what words are more/less common in shared/indiv pubs
