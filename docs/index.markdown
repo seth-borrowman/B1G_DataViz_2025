@@ -6,4 +6,4 @@ layout: home
 ---
 # Big Ten Academic Alliance 2025 Data Viz Championship
 Github pages test
-<iframe src="ggplotlyHeatmap.html" height="600px" width="100%" style="border:none;"></iframe>
+<iframe src="widgets/ggplotlyHeatmap.html" height="600px" width="100%" style="border:none;"></iframe>
