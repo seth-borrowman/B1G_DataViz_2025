@@ -10,7 +10,6 @@ By Seth Borrowman, Northwestern University
 
 ## Heatmap
 <iframe src="/widgets/ggplotlyHeatmap.html" height="600px" width="100%" style="border:none;"></iframe>
-{% include /widgets/ggplotlyHeatmap.html %}
 
 ## Network graph
 
