@@ -5,6 +5,7 @@
 layout: home
 ---
 # Big Ten Academic Alliance 2025 Data Viz Championship
+By Seth Borrowman, Northwestern University
 ## Introduction
 
 ## Heatmap
