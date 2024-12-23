@@ -8,7 +8,7 @@ layout: home
 ## Introduction
 
 ## Heatmap
-<iframe src="widgets/ggplotlyHeatmap.html" height="600px" width="100%" style="border:none;"></iframe>
+<iframe src="/widgets/ggplotlyHeatmap.html" height="600px" width="100%" style="border:none;"></iframe>
 
 ## Network graph
 
